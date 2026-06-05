@@ -250,6 +250,52 @@ footer{
     padding:20px;
     margin-top:25px;
 }
+.api-docs{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.api-endpoint{
+    background:#f8fafc;
+    border-left:4px solid #0f4cbd;
+    padding:15px;
+    border-radius:8px;
+}
+
+.api-endpoint strong{
+    color:#16a34a;
+    margin-right:10px;
+}
+
+.api-endpoint code{
+    background:#e5e7eb;
+    padding:4px 8px;
+    border-radius:4px;
+    font-family:monospace;
+    display:inline-block;
+    margin-right:10px;
+}
+
+.api-endpoint span{
+    display:block;
+    margin-top:8px;
+    color:#555;
+}
+
+.api-btn{
+    display:inline-block;
+    background:#7c3aed;
+    color:white;
+    padding:10px 18px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.api-btn:hover{
+    opacity:0.9;
+}
 
 footer p{
     margin:5px 0;
@@ -286,7 +332,7 @@ footer p{
 
         <div class="card">
             <h3>REST APIs</h3>
-            <h2>Live</h2>
+<h2>2 Endpoints</h2>
         </div>
 
     </div>
@@ -316,6 +362,22 @@ footer p{
         </ul>
 
     </div>
+    <div class="section">
+
+    <h2>Platform Features</h2>
+
+    <ul>
+        <li>Interactive Company Dashboards</li>
+        <li>Financial Ratio Analytics</li>
+        <li>PostgreSQL Data Warehouse</li>
+        <li>REST API Integration</li>
+        <li>Company Search & Filtering</li>
+        <li>NSE & BSE Integration</li>
+        <li>TradingView Financial Charts</li>
+        <li>Scalable Django Architecture</li>
+    </ul>
+
+</div>
 
     <div class="section">
 
@@ -368,9 +430,9 @@ footer p{
     </td>
 
     <td>
-        <a href="/company/{{ company.id }}/" class="btn dashboard">
-            Dashboard
-        </a>
+        <a href="/company/{{ company.id }}/"
+   target="_blank"
+   class="btn dashboard">
     </td>
 
     <td>{{ company.book_value }}</td>
@@ -421,37 +483,87 @@ footer p{
 
     <div class="section">
 
-        <h2>REST API Access</h2>
+    <h2>REST API Documentation</h2>
 
-        <p>
-            Financial company data can be accessed using Django REST APIs.
-        </p>
+    <p>
+        Channel partners and developers can access company financial data
+        programmatically using the Financial Intelligence REST APIs.
+    </p>
 
-        <br>
+    <br>
 
-        <a href="/api/companies/"
-           target="_blank"
-           class="btn api">
-           Open REST API
+    <div class="api-docs">
+
+        <div class="api-endpoint">
+            <strong>GET</strong>
+            <code>/api/companies/</code>
+            <span>
+                Returns all available companies with financial information.
+            </span>
+        </div>
+
+        <div class="api-endpoint">
+            <strong>GET</strong>
+            <code>/api/companies/ABB/</code>
+            <span>
+                Returns detailed information for a specific company.
+            </span>
+        </div>
+
+    </div>
+
+    <br>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+
+        <a
+            href="/api/companies/"
+            target="_blank"
+            class="api-btn"
+        >
+            View Companies API
+        </a>
+
+        <a
+            href="/api/companies/ABB/"
+            target="_blank"
+            class="api-btn"
+        >
+            View Sample Company API
         </a>
 
     </div>
 
 </div>
 
+</div>
+
 <footer>
 
+
     <h3>Financial Intelligence System</h3>
+
+    <p>
+        AI-Powered Analytics Platform for Nifty 100 Companies
+    </p>
 
     <p>
         Django • PostgreSQL • Data Warehouse • REST API
     </p>
 
     <p>
-        Internship Capstone Project Submission
+        Internship Capstone Project
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 Financial Intelligence System
     </p>
 
 </footer>
+
+
 
 <script>
 
