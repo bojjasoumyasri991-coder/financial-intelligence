@@ -9,11 +9,10 @@ from django.shortcuts import get_object_or_404
 # -----------------------------
 # HOME PAGE
 # -----------------------------
+from django.http import HttpResponse
+
 def home(request):
-
-    search_query = request.GET.get("search", "")
-
-    companies = Company.objects.all()
+    return HttpResponse("Django Working Successfully")
 
     if search_query:
         companies = companies.filter(
