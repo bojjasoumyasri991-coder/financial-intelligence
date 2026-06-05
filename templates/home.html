@@ -379,19 +379,6 @@ footer p{
 
     </div>
 
-   <div class="dashboard-grid">
-
-    <div class="section">
-
-        <h2>Project Overview</h2>
-
-        <p>
-            Financial Intelligence System built using Django,
-            PostgreSQL, ETL Pipelines, Data Warehousing,
-            Machine Learning and REST APIs.
-        </p>
-
-    </div>
 
     <div class="section">
 
@@ -456,44 +443,6 @@ footer p{
 
 </div>
 
-    <div style="
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-        gap:15px;
-    ">
-
-        <div class="card metric-card">
-            <h3>Profitability Analysis</h3>
-            <p>
-                Evaluate ROE and ROCE performance across Nifty 100 companies.
-            </p>
-        </div>
-
-        <div class="card metric-card">
-            <h3>Company Dashboard</h3>
-            <p>
-                Detailed company-level analytics with financial metrics and charts.
-            </p>
-        </div>
-
-        <div class="card metric-card">
-            <h3>Market Intelligence</h3>
-            <p>
-                TradingView chart integration for live market visualization.
-            </p>
-        </div>
-
-        <div class="card metric-card">
-            <h3>REST API Access</h3>
-            <p>
-                Programmatic access to company financial data via Django REST API.
-            </p>
-        </div>
-
-    </div>
-
-</div>
-
     <div class="section">
 
         <h2>Nifty 100 Companies Database</h2>
@@ -511,18 +460,18 @@ footer p{
 
                 <thead>
                     <tr>
-                        <th>Symbol</th>
-                        <th class="company-name-col">Company Name</th>
-                        <th>Dashboard</th>
-                        <th>Book Value</th>
-                        <th>Face Value</th>
-                        <th>ROCE %</th>
-                        <th>ROE %</th>
-                        <th>Website</th>
-                        <th>NSE</th>
-                        <th>BSE</th>
-                        <th class="about">About Company</th>
-                    </tr>
+    <th>Symbol</th>
+    <th>Company Name</th>
+    <th>Dashboard</th>
+    <th>Book Value</th>
+    <th>Face Value</th>
+    <th>ROCE %</th>
+    <th>ROE %</th>
+    <th>Website</th>
+    <th>NSE</th>
+    <th>BSE</th>
+    <th>About Company</th>
+</tr>
                 </thead>
 
                 <tbody>
@@ -545,10 +494,12 @@ footer p{
     </td>
 
     <td>
-        <a href="/company/{{ company.id }}/"
-   target="_blank"
-   class="btn dashboard">
-    </td>
+    <a href="/company/{{ company.id }}/"
+       target="_blank"
+       class="btn dashboard">
+       Dashboard
+    </a>
+</td>
 
     <td>{{ company.book_value }}</td>
     <td>{{ company.face_value }}</td>
