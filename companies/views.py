@@ -12,14 +12,8 @@ from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse("Django Working Successfully")
 
-    if search_query:
-        companies = companies.filter(
-            id__icontains=search_query
-        ) | Company.objects.filter(
-            company_name__icontains=search_query
-        )
+    companies = Company.objects.all()
 
     context = {
         "companies": companies,
