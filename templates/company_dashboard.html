@@ -58,7 +58,7 @@ body{
 
 .metrics{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
     margin-bottom:25px;
 }
@@ -77,10 +77,12 @@ body{
 .metric-card h3{
     color:#666;
     margin-bottom:10px;
+    font-size:15px;
 }
 
 .metric-card h2{
     color:#0f4cbd;
+    font-size:28px;
 }
 
 .section{
@@ -109,6 +111,11 @@ body{
     text-decoration:none;
     border-radius:8px;
     font-size:14px;
+    transition:.3s;
+}
+
+.btn:hover{
+    opacity:.85;
 }
 
 .website{
@@ -133,8 +140,9 @@ body{
 
 .chart{
     width:100%;
+    height:650px;
     border:none;
-    min-height:650px;
+    border-radius:10px;
 }
 
 .footer{
@@ -164,6 +172,7 @@ body{
             src="{{ company.company_logo }}"
             alt="{{ company.company_name }}"
             class="logo"
+            onerror="this.src='https://via.placeholder.com/90?text=Logo';"
         >
         {% endif %}
 
@@ -219,31 +228,19 @@ body{
         <div class="links">
 
             {% if company.website %}
-            <a
-                href="{{ company.website }}"
-                target="_blank"
-                class="btn website"
-            >
+            <a href="{{ company.website }}" target="_blank" class="btn website">
                 Company Website
             </a>
             {% endif %}
 
             {% if company.nse_profile %}
-            <a
-                href="{{ company.nse_profile }}"
-                target="_blank"
-                class="btn nse"
-            >
+            <a href="{{ company.nse_profile }}" target="_blank" class="btn nse">
                 NSE Profile
             </a>
             {% endif %}
 
             {% if company.bse_profile %}
-            <a
-                href="{{ company.bse_profile }}"
-                target="_blank"
-                class="btn bse"
-            >
+            <a href="{{ company.bse_profile }}" target="_blank" class="btn bse">
                 BSE Profile
             </a>
             {% endif %}
@@ -251,15 +248,13 @@ body{
             <a
                 href="/api/companies/{{ company.id }}/"
                 target="_blank"
-                class="btn api"
-            >
+                class="btn api">
                 Company API
             </a>
 
             <a
                 href="/"
-                class="btn home"
-            >
+                class="btn home">
                 Back Home
             </a>
 
@@ -267,21 +262,17 @@ body{
 
     </div>
 
-    {% if company.chart_link %}
-
     <div class="section">
 
         <h2>Financial Analytics Dashboard</h2>
 
         <iframe
-            src="{{ company.chart_link }}"
+            src="https://s.tradingview.com/widgetembed/?symbol=NSE:{{ company.id }}"
             class="chart"
             allowfullscreen>
         </iframe>
 
     </div>
-
-    {% endif %}
 
 </div>
 
